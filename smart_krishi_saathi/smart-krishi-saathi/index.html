@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Krishi Saathi</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div id="app"></div>
+<button id="voiceFab" title="Ask Krishi Saathi">🎙️</button>
+<div id="voicePanel" class="hidden"></div>
+
+<script src="js/config.js" defer></script>
+<!-- Firebase compat SDK (only used if js/config.js has a real firebase.apiKey; harmless otherwise) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage-compat.js" defer></script>
+<script src="js/firebase/firebaseService.js" defer></script>
+<script src="js/services/weatherService.js" defer></script>
+<script src="js/services/marketService.js" defer></script>
+<script src="js/services/aiCropDoctorService.js" defer></script>
+<script src="js/services/notificationService.js" defer></script>
+<script src="js/services/offlineQueue.js" defer></script>
+<script src="js/app.js" defer></script>
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>
